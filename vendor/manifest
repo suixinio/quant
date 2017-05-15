@@ -1,0 +1,169 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/astaxie/beego",
+			"repository": "https://github.com/astaxie/beego",
+			"revision": "83814a76cc77279d5d979780e82f4464b33677c3",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/astaxie/beego/session",
+			"repository": "https://github.com/astaxie/beego",
+			"revision": "83814a76cc77279d5d979780e82f4464b33677c3",
+			"branch": "master",
+			"path": "/session"
+		},
+		{
+			"importpath": "github.com/astaxie/beego/utils",
+			"repository": "https://github.com/astaxie/beego",
+			"revision": "83814a76cc77279d5d979780e82f4464b33677c3",
+			"branch": "master",
+			"path": "/utils"
+		},
+		{
+			"importpath": "github.com/bitly/go-simplejson",
+			"repository": "https://github.com/bitly/go-simplejson",
+			"revision": "da1a8928f709389522c8023062a3739f3b4af419",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/d4l3k/talib",
+			"repository": "https://github.com/d4l3k/talib",
+			"revision": "7775b9da1da7c78030e9939ff9cee7b8d3c55223",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/denisenkom/go-mssqldb",
+			"repository": "https://github.com/denisenkom/go-mssqldb",
+			"revision": "e3bd523cf238e14637d0e028becc25651098a138",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/dgrijalva/jwt-go",
+			"repository": "https://github.com/dgrijalva/jwt-go",
+			"revision": "6c8dedd55f8a2e41f605de6d5d66e51ed1f299fc",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/go-ini/ini",
+			"repository": "https://github.com/go-ini/ini",
+			"revision": "e7fea39b01aea8d5671f6858f0532f56e8bff3a5",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/go-sql-driver/mysql",
+			"repository": "https://github.com/go-sql-driver/mysql",
+			"revision": "382e13d099fcf5f5994290892ab258fbebbdc5e3",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/golang/tools",
+			"repository": "https://github.com/golang/tools",
+			"revision": "144c6642b5d832d6c44a53dad6ee61665dd432ce",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/gorilla/websocket",
+			"repository": "https://github.com/gorilla/websocket",
+			"revision": "a91eba7f97777409bc2c443f5534d41dd20c5720",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/hprose/hprose-golang/io",
+			"repository": "https://github.com/hprose/hprose-golang",
+			"revision": "896a274064cbeed12c9bdaaa259722f8fe097049",
+			"branch": "master",
+			"path": "/io"
+		},
+		{
+			"importpath": "github.com/hprose/hprose-golang/rpc",
+			"repository": "https://github.com/hprose/hprose-golang",
+			"revision": "896a274064cbeed12c9bdaaa259722f8fe097049",
+			"branch": "master",
+			"path": "/rpc"
+		},
+		{
+			"importpath": "github.com/hprose/hprose-golang/util",
+			"repository": "https://github.com/hprose/hprose-golang",
+			"revision": "896a274064cbeed12c9bdaaa259722f8fe097049",
+			"branch": "master",
+			"path": "/util"
+		},
+		{
+			"importpath": "github.com/jinzhu/gorm",
+			"repository": "https://github.com/jinzhu/gorm",
+			"revision": "9acaa33324bbcc78239a1c913d4f1292c12177b9",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/jinzhu/inflection",
+			"repository": "https://github.com/jinzhu/inflection",
+			"revision": "1c35d901db3da928c72a72d8458480cc9ade058f",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/klauspost/compress/flate",
+			"repository": "https://github.com/klauspost/compress",
+			"revision": "e80ca55b53e5e6f53deed5c7842e7b7da95e1dc7",
+			"branch": "master",
+			"path": "/flate"
+		},
+		{
+			"importpath": "github.com/klauspost/compress/gzip",
+			"repository": "https://github.com/klauspost/compress",
+			"revision": "e80ca55b53e5e6f53deed5c7842e7b7da95e1dc7",
+			"branch": "master",
+			"path": "/gzip"
+		},
+		{
+			"importpath": "github.com/klauspost/compress/zlib",
+			"repository": "https://github.com/klauspost/compress",
+			"revision": "e80ca55b53e5e6f53deed5c7842e7b7da95e1dc7",
+			"branch": "master",
+			"path": "/zlib"
+		},
+		{
+			"importpath": "github.com/klauspost/cpuid",
+			"repository": "https://github.com/klauspost/cpuid",
+			"revision": "09cded8978dc9e80714c4d85b0322337b0a1e5e0",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/lib/pq",
+			"repository": "https://github.com/lib/pq",
+			"revision": "2704adc878c21e1329f46f6e56a1c387d788ff94",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/mattn/go-sqlite3",
+			"repository": "https://github.com/mattn/go-sqlite3",
+			"revision": "cf7286f069c3ef596efcc87781a4653a2e7607bd",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/robertkrimen/otto",
+			"repository": "https://github.com/robertkrimen/otto",
+			"revision": "21ec96599b1279b5673e4df0097dd56bb8360068",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/valyala/bytebufferpool",
+			"repository": "https://github.com/valyala/bytebufferpool",
+			"revision": "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/valyala/fasthttp",
+			"repository": "https://github.com/valyala/fasthttp",
+			"revision": "9ffce8c687bb1f181032a667206d248058cd445a",
+			"branch": "master"
+		},
+		{
+			"importpath": "gopkg.in/sourcemap.v1",
+			"repository": "https://gopkg.in/sourcemap.v1",
+			"revision": "6e83acea0053641eff084973fee085f0c193c61a",
+			"branch": "master"
+		}
+	]
+}
