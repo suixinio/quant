@@ -58,12 +58,6 @@
 			"branch": "master"
 		},
 		{
-			"importpath": "github.com/golang/tools",
-			"repository": "https://github.com/golang/tools",
-			"revision": "144c6642b5d832d6c44a53dad6ee61665dd432ce",
-			"branch": "master"
-		},
-		{
 			"importpath": "github.com/gorilla/websocket",
 			"repository": "https://github.com/gorilla/websocket",
 			"revision": "a91eba7f97777409bc2c443f5534d41dd20c5720",

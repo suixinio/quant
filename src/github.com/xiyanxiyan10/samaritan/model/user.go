@@ -1,7 +1,7 @@
 package model
 
 import (
-	//"log"
+	// "log"
 	"time"
 )
 
@@ -35,7 +35,7 @@ func (user User) ListUser(size, page int64, order string) (total int64, users []
 		return
 	}
 
-	//log.Printf("page %d, size %d", page, size)
+	// log.Printf("page %d, size %d, order %s", page, size, order)
 
 	if size < 0 {
 		err = DB.Where("level < ? OR id = ?", user.Level, user.ID).Order(toUnderScoreCase(order)).Limit(size).Find(&users).Error

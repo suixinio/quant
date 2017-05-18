@@ -2,6 +2,7 @@ package handler
 
 import (
 	"fmt"
+	// "log"
 
 	"github.com/hprose/hprose-golang/rpc"
 	"github.com/xiyanxiyan10/samaritan/constant"
@@ -57,6 +58,22 @@ func (exchange) Put(req model.Exchange, ctx rpc.Context) (resp response) {
 		resp.Message = fmt.Sprint(err)
 		return
 	}
+
+	// log.Printf("user level %d\n", self.Level)
+
+	if self.Level == 0 {
+		total, _, err := self.ListExchange(-1, -1, "id")
+		if err != nil {
+			resp.Message = fmt.Sprint(err)
+			return
+		}
+
+		if total > 0 {
+			resp.Message = fmt.Sprint("Just one exchange with level 0")
+			return
+		}
+	}
+
 	exchange := req
 	if req.ID > 0 {
 		if err := model.DB.First(&exchange, req.ID).Error; err != nil {

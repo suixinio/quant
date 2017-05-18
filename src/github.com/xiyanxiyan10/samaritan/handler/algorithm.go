@@ -50,6 +50,20 @@ func (algorithm) Put(req model.Algorithm, ctx rpc.Context) (resp response) {
 		resp.Message = fmt.Sprint(err)
 		return
 	}
+
+	if self.Level == 0 {
+		total, _, err := self.ListAlgorithm(-1, -1, "id")
+		if err != nil {
+			resp.Message = fmt.Sprint(err)
+			return
+		}
+
+		if total > 0 {
+			resp.Message = fmt.Sprint("Just one algorithm with level 0")
+			return
+		}
+	}
+
 	algorithm := req
 	if req.ID > 0 {
 		if err := model.DB.First(&algorithm, req.ID).Error; err != nil {

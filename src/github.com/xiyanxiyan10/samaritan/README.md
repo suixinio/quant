@@ -1,85 +1,83 @@
-# Samaritan
+# Quant
 
-[![Travis](https://img.shields.io/travis/xiyanxiyan10/samaritan.svg)](https://travis-ci.org/xiyanxiyan10/samaritan) [![Go Report Card](https://goreportcard.com/badge/github.com/xiyanxiyan10/samaritan)](https://goreportcard.com/report/github.com/xiyanxiyan10/samaritan) [![Github All Releases](https://img.shields.io/github/downloads/xiyanxiyan10/samaritan/total.svg)](https://github.com/xiyanxiyan10/samaritan/releases) [![Gitter](https://img.shields.io/gitter/room/xiyanxiyan10/samaritan.svg)](https://gitter.im/xiyanxiyan10-samaritan/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![Docker Pulls](https://img.shields.io/docker/pulls/xiyanxiyan10/samaritan.svg)](https://hub.docker.com/r/xiyanxiyan10/samaritan/) [![license](https://img.shields.io/github/license/xiyanxiyan10/samaritan.svg)](https://github.com/xiyanxiyan10/samaritan/blob/master/LICENSE)
+## Brief
 
-[中文文档](http://samaritan.stockdb.org/#/zh-cn)
+Quants trader tool
 
-## Installation
+rebuild from samaritan and pholcus
 
-You can install samaritan from **installation package** or **Docker**.
+## Support
 
-The default username and password are `admin`, please modify them immediately after login!
+- bitcoin
+- talib algorithm
 
-### From installation package
 
-1. Download the samaritan installation package on [this page](https://github.com/xiyanxiyan10/samaritan/releases)
-2. Unzip the samaritan installation package
-3. Enter the extracted samaritan installation directory
-4. Run `samaritan`
+## Install
 
-Then, samaritan is running at `http://localhost:9876`.
+### Install Env
 
-**Linux & Mac user quick start command**
-
-```shell
-wget https://github.com/xiyanxiyan10/samaritan/releases/download/v{{VERSION}}/samaritan_{{OS}}_{{ARCH}}.tar.gz
-tar -xzvf samaritan_{{OS}}_{{ARCH}}.tar.gz
-cd samaritan_{{OS}}_{{ARCH}}
-./samaritan
+```
+    Install golang package Manager gb
+    Enter into project
 ```
 
-Please replace *{{VERSION}}*, *{{OS}}*, *{{ARCH}}* first.
+### Install Package
 
-### From Docker
-
-```shell
-docker run --name=samaritan -p 19876:9876 xiyanxiyan10/samaritan
+```
+    go vendor restore
 ```
 
-Then, samaritan is running at `http://localhost:19876`.
+```
+    mkdir vendor/src/golang.org/x -p
+    cd vendor/src/golang.org/x
+    
+    git clone https://github.com/golang/text
+    git clone https://github.com/golang/tools
+    git clone https://github.com/golang/net
+    
+    cd src/github.com/xiyanxiyanxiyan10/web && npm install
+```
 
-## Supported exchanges
+### Build
 
-| Exchange | Stock |
-| -------- | ----- |
-| okcoin.cn | `BTC/CNY`, `LTC/CNY` |
-| huobi | `BTC/CNY`, `LTC/CNY` |
-| poloniex | `ETH/BTC`, `XMR/BTC`, `BTC/USDT`, `LTC/BTC`, `ETC/BTC`, `XRP/BTC`, `ETH/USDT`, `ETC/ETH`, ... |
-| btcc | `BTC/CNY`, `LTC/CNY`, `LTC/BTC` |
-| chbtc | `BTC/CNY`, `LTC/CNY`, `ETH/CNY`, `ETC/CNY` |
-| okcoin.future | `BTC.WEEK/USD`, `BTC.WEEK2/USD`, `BTC.MONTH3/USD`, `LTC.WEEK/USD`, ... |
-| oanda.v20 | coming soon ...... |
 
-## Usage
+```
+    cd src/github.com/xiyanxiyanxiyan10/web 
+    cooking build
+```
 
-### Add an Exchange
+```
+    gb build github.com/xiyanxiyanxiyan10    
 
-![](https://raw.githubusercontent.com/xiyanxiyan10/samaritan/master/docs/_media/add-exchange.png)
+```
 
-### Add an Algorithm
+### Run
 
-![](https://raw.githubusercontent.com/xiyanxiyan10/samaritan/master/docs/_media/add-algorithm.png)
+```
+    cp src/github.com/xiyanxiyanxiyan10/config.ini /tmp
+    bin/samaritan
+```
 
-![](https://raw.githubusercontent.com/xiyanxiyan10/samaritan/master/docs/_media/edit-algorithm.png)
+## Module
+ 
+1. samaritan  trade framework
 
-### Deploy an Algorithm
 
-![](https://raw.githubusercontent.com/xiyanxiyan10/samaritan/master/docs/_media/add-trader.png)
+## Depend
 
-### Run a Trader
+1. talib
+2. go 
+3. cooking
+4. nodejs
 
-![](https://raw.githubusercontent.com/xiyanxiyan10/samaritan/master/docs/_media/run-trader.png)
+## Todo
 
-## Algorithm Reference
+1. better system for user permission
+2. data mining with pholcus
 
-[Read Documentation](http://samaritan.stockdb.org/#/#algorithm-reference)
+## Contanct
 
-## Contributing
+1. name: lancelot
+2. email:xiyanxiyan10@hotmail.com
+3. weixin: xiyanxiyan10
 
-Contributions are not accepted in principle until the basic infrastructure is complete.
-
-However, the [ISSUE](https://github.com/xiyanxiyan10/samaritan/issues) is welcome.
-
-## License
-
-Copyright (c) 2016 [xiyanxiyan10](https://github.com/xiyanxiyan10) by MIT

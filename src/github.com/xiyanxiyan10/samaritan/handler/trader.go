@@ -2,6 +2,7 @@ package handler
 
 import (
 	"fmt"
+	//"log"
 
 	"github.com/hprose/hprose-golang/rpc"
 	"github.com/xiyanxiyan10/samaritan/constant"
@@ -48,11 +49,25 @@ func (runner) Put(req model.Trader, ctx rpc.Context) (resp response) {
 		resp.Message = fmt.Sprint(err)
 		return
 	}
+
+	traders, err := self.ListTrader(req.AlgorithmID)
+	if err != nil {
+		resp.Message = fmt.Sprint(err)
+		return
+	}
+
+	if self.Level == 0 && len(traders) > 0 {
+		//log.Printf("user level %d add trader fail\n", self.Level)
+		resp.Message = fmt.Sprint("Just one trader with level 0")
+		return
+	}
+
 	db, err := model.NewOrm()
 	if err != nil {
 		resp.Message = fmt.Sprint(err)
 		return
 	}
+
 	defer db.Close()
 	db = db.Begin()
 	if req.ID > 0 {

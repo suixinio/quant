@@ -1,15 +1,17 @@
 package main
 
 import (
-	//"github.com/astaxie/beego/session"
+	// "github.com/astaxie/beego/session"
 	"github.com/xiyanxiyan10/samaritan/handler"
 )
 
 func main() {
-	//beegoCf := &session.ManagerConfig{}
-	//globalSessions, _ := session.NewManager("memory", beegoCf)
+	// cf := session.ManagerConfig{}
+	// cf.CookieName = "gosessionid"
+	// cf.Gclifetime = 3600
 
-	//globalSessions, _ = session.NewManager("memory", `{"cookieName":"gosessionid", "enableSetCookie,omitempty": true, "gclifetime":3600, "maxLifetime": 3600, "secure": false, "cookieLifeTime": 3600, "providerConfig": ""}`)
-	//go globalSessions.GC()
+	// globalSessions, _ := session.NewManager("memory", &cf)
+	// go globalSessions.GC()
+
 	handler.Server()
 }

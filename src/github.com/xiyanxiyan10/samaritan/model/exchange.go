@@ -31,6 +31,10 @@ func (user User) ListExchange(size, page int64, order string) (total int64, exch
 	if err != nil {
 		return
 	}
-	err = DB.Where("user_id in (?)", userIDs).Order(toUnderScoreCase(order)).Limit(size).Offset((page - 1) * size).Find(&exchanges).Error
+	if size < 0 {
+		err = DB.Where("user_id in (?)", userIDs).Order(toUnderScoreCase(order)).Limit(size).Find(&exchanges).Error
+	} else {
+		err = DB.Where("user_id in (?)", userIDs).Order(toUnderScoreCase(order)).Limit(size).Offset((page - 1) * size).Find(&exchanges).Error
+	}
 	return
 }
