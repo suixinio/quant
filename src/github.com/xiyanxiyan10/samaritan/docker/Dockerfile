@@ -50,6 +50,15 @@ RUN sudo mkdir -p /var/log/supervisor
 # 添加 supervisord 的配置文件，并复制配置文件到对应目录下面。（supervisord.conf文件和Dockerfile文件在同一路径）
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+
+
+#VOLUME 选项是将本地的目录挂在到容器中　此处要注意：当你运行-v　＜hostdir>:<Containerdir> 时要确保目录内容相同否则会出现数据丢失
+## 对应关系如下
+### samaritan:/docker/samaritan
+VOLUME ["/samaritan"]
+
+
+
 # 容器需要开放SSH 22端口
 EXPOSE 22
 
