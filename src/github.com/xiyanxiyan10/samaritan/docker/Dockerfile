@@ -3,64 +3,37 @@
 # desc : 当前版本安装的ssh，wget，curl，supervisor 
 ############################################
 # 设置继承自ubuntu官方镜像
-FROM ubuntu:14.04
+FROM birdben/tools:v1
 
 # 下面是一些创建者的基本信息
 MAINTAINER birdben (191654006@163.com)
 
-# 注意这里要更改系统的时区设置，因为在 web 应用中经常会用到时区这个系统变量，默认的 ubuntu 会让你的应用程序发生不可思议的效果哦
+# 设置环境变量，所有操作都是非交互式的
 ENV DEBIAN_FRONTEND noninteractive
 
-# 清空ubuntu更新包
-RUN sudo rm -rf /var/lib/apt/lists/*
-
-# 使用阿里源安装包
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main multiverse restricted universe"                 > /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main multiverse restricted universe"       >> /etc/apt/sources.lsst
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main multiverse restricted universe"        >> /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security main multiverse restricted universe"        >> /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main multiverse restricted universe"         >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty main multiverse restricted universe"             >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main multiverse restricted universe"   >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main multiverse restricted universe"    >> /etc/apt/sources.lsst
-RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main multiverse restricted universe"    >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main multiverse restricted universe"     >> /etc/apt/sources.list
-
-# 一次性安装vim，wget，curl，ssh server等必备软件
-#RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list
-RUN sudo apt-get update
-RUN sudo apt-get install -y vim wget curl openssh-server sudo
-RUN sudo mkdir -p /var/run/sshd
-
-# 将sshd的UsePAM参数设置成no
-RUN sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
-
-# 添加测试用户admin，密码admin，并且将此用户添加到sudoers里
-RUN useradd admin
-RUN echo "admin:admin" | chpasswd
-RUN echo "admin   ALL=(ALL)       ALL" >> /etc/sudoers
-
-# 把admin用户的shell改成bash，否则SSH登录Ubuntu服务器，命令行不显示用户名和目录 
-RUN usermod -s /bin/bash admin
-
-# 安装supervisor工具
-RUN sudo apt-get install -y supervisor
-RUN sudo mkdir -p /var/log/supervisor
+#install sqlite
+RUN sudo apt-get install -y sqlite autoconf automake libtool make
 
 # 添加 supervisord 的配置文件，并复制配置文件到对应目录下面。（supervisord.conf文件和Dockerfile文件在同一路径）
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY store/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# add config.ini
+COPY store/config/config.ini /tmp/config.ini
 
+# add talib
+COPY depend/ta-lib-0.4.0-src.tar.gz /tmp/ta-lib-0.4.0-src.tar.gz 
+COPY depend/build.sh /tmp/build.sh
+CMD ["/tmp/build.sh"]
 
+# set env
+CMD ["export LC_ALL=C"]
 #VOLUME 选项是将本地的目录挂在到容器中　此处要注意：当你运行-v　＜hostdir>:<Containerdir> 时要确保目录内容相同否则会出现数据丢失
 ## 对应关系如下
 ### samaritan:/docker/samaritan
 VOLUME ["/samaritan"]
 
-
-
-# 容器需要开放SSH 22端口
-EXPOSE 22
+# samaritan 9876
+EXPOSE 9876
 
 # 执行supervisord来同时执行多个命令，使用 supervisord 的可执行路径启动服务。
 CMD ["/usr/bin/supervisord"]
