@@ -12,7 +12,7 @@ var gulp = require('gulp'),
     exit = require('gulp-exit'),
     git = require('gulp-git'),
     gulpSequence = require('gulp-sequence'),
-    mySSH = require('./.gulp/ssh'),
+    mySSH = require('./gulp/ssh'),
     fs = require('fs'),
     shell = require('gulp-shell');
 
@@ -161,7 +161,7 @@ gulp.task('idealens-main', function (cb) {
     cfg.deployServers = cfg.servers;
 
     var envCfg = getEnvConf("main");
-    require("./.gulp/deploy.js")(envCfg, cfg);
+    require("./gulp/deploy.js")(envCfg, cfg);
 
     gulpSequence("clean:dist", "copyWebSiteToDist",
         "process:setting", "process:dockerfile", "zipPublishFile",
