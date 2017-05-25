@@ -1,5 +1,33 @@
 {
-  "devDependencies": {
-    "gulp": "^3.9.1"
-  }
+  "name": "quant",
+  "version": "1.0.0",
+  "description": "quant tool",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-exit": "^0.0.2",
+    "gulp-git": "^2.3.0",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sequence": "^0.4.6",
+    "gulp-shell": "^0.6.3",
+    "gulp-ssh": "^0.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-zip": "^4.0.0",
+    "progress": "^2.0.0",
+    "pump": "^1.0.2",
+    "scp2": "^0.5.0",
+    "yargs": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.oschina.net/misakaMM/quant"
+  },
+  "author": "lancelot",
+  "license": "ISC"
 }
