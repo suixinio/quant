@@ -58,10 +58,10 @@ module.exports = function (envCfg, cfg) {
                     "rm publish.zip",
                     "mv Dockerfile." + envCfg.type + " Dockerfile",
                     "mv dockerignore." + envCfg.type + " .dockerignore",
-                    "sudo docker build -t a80:5000/idealens-" + envCfg.type + ":" + tag + " .",
-                    "sudo docker push a80:5000/idealens-" + envCfg.type + ":" + tag,
+                    "sudo docker build -t a80:5000/project-" + envCfg.type + ":" + tag + " .",
+                    "sudo docker push a80:5000/project-" + envCfg.type + ":" + tag,
                     "cd ../../k8s/",
-                    "./deploy.sh idealens-" + envCfg.type + " " + tag + "",
+                    "./deploy.sh project-" + envCfg.type + " " + tag + "",
                 ],
                 logPath: logName
             }))

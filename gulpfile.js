@@ -140,7 +140,7 @@ gulp.task('static:deploy', function () {
         .pipe(exit());
 });
 
-gulp.task('idealens-static', function () {
+gulp.task('project-static', function () {
     gulpSequence('static:copy', 'static:css', 'static:uglify', 'static:zip',
         'static:deploy',
         function () {
@@ -150,7 +150,7 @@ gulp.task('idealens-static', function () {
     );
 });
 
-gulp.task('idealens-main', function (cb) {
+gulp.task('project-main', function (cb) {
     var env = argv.env || "test";
     cfg = deployConfig[env];
     if (!cfg) {
@@ -172,7 +172,7 @@ gulp.task('idealens-main', function (cb) {
         });
 });
 
-gulp.task('idealens-sendemail', function (cb) {
+gulp.task('project-sendemail', function (cb) {
     var env = argv.env || "test";
     cfg = deployConfig[env];
     if (!cfg) {
@@ -194,7 +194,7 @@ gulp.task('idealens-sendemail', function (cb) {
         });
 });
 
-gulp.task('idealens-sendsms', function (cb) {
+gulp.task('project-sendsms', function (cb) {
     var env = argv.env || "test";
     cfg = deployConfig[env];
     if (!cfg) {
@@ -216,7 +216,7 @@ gulp.task('idealens-sendsms', function (cb) {
         });
 });
 
-gulp.task('idealens-sendcdn', function (cb) {
+gulp.task('project-sendcdn', function (cb) {
     var env = argv.env || "test";
     cfg = deployConfig[env];
     if (!cfg) {
@@ -238,7 +238,7 @@ gulp.task('idealens-sendcdn', function (cb) {
         });
 });
 
-gulp.task('idealens-checkpay', function (cb) {
+gulp.task('project-checkpay', function (cb) {
     var env = argv.env || "test";
     cfg = deployConfig[env];
     if (!cfg) {
@@ -260,7 +260,7 @@ gulp.task('idealens-checkpay', function (cb) {
         });
 });
 
-gulp.task('idealens-scheduler-bill', function (cb) {
+gulp.task('project-scheduler-bill', function (cb) {
     var env = argv.env || "test";
     cfg = deployConfig[env];
     if (!cfg) {
