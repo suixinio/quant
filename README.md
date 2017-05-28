@@ -35,15 +35,14 @@ rebuild from samaritan and pholcus
     git clone https://github.com/golang/tools
     git clone https://github.com/golang/net
     
-    cd src/github.com/xiyanxiyanxiyan10/web && npm install
+    cd ./web && npm install
 ```
 
 ### Build
 
 
 ```
-    cd src/github.com/xiyanxiyanxiyan10/web 
-    cooking build
+    cd ./web && cooking build
 ```
 
 ```
@@ -54,7 +53,7 @@ rebuild from samaritan and pholcus
 ### Run
 
 ```
-    cp src/github.com/xiyanxiyanxiyan10/config.ini /tmp
+    cp ./docker/config.ini /tmp
     bin/samaritan
 ```
 
