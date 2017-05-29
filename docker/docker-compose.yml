@@ -6,4 +6,4 @@ services:
                 - "9999:22"
                 - "9876:9876"
             volumes:
-                - /home/lancelot/project/quant/docker/store:/samaritan
+                - ./store:/samaritan
