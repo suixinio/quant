@@ -1,9 +1,9 @@
 ############################################
-# version : birdben/tools:v1
+# version : lancelot/tools:v1
 # desc : 当前版本安装的ssh，wget，curl，supervisor 
 ############################################
 # 设置继承自ubuntu官方镜像
-FROM birdben/tools:v1
+FROM lancelot/tools:v1.0
 
 # 下面是一些创建者的基本信息
 MAINTAINER birdben (191654006@163.com)
@@ -23,6 +23,8 @@ COPY store/config/config.ini /tmp/config.ini
 # add talib
 COPY depend/ta-lib-0.4.0-src.tar.gz /tmp/ta-lib-0.4.0-src.tar.gz 
 COPY depend/build.sh /tmp/build.sh
+
+CMD ["chmod 777 /tmp/build.sh"]
 CMD ["/tmp/build.sh"]
 
 # set env
