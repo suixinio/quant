@@ -21,13 +21,14 @@ COPY store/config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY store/config/config.ini /tmp/config.ini
 
 # add talib
-Add depend/ta-lib-0.4.0-src.tar.gz /home/admin
+Add depend/ta-lib-0.4.0-src.tar.gz /tmp
+Add depend/build.sh /tmp
 
-WORKDIR "/home/admin/ta-lib"
-#CMD ["sudo chmod 777 ./configure"]
-#CMD ["sudo ./configure --prefix=/usr LDFLAGS=-lm"]
-#CMD ["sudo make"]
-#CMD ["sudo make install"]
+WORKDIR "/tmp/ta-lib"
+CMD ["sudo chmod 777 ./configure"]
+CMD ["./configure --prefix=/usr LDFLAGS=-lm"]
+CMD ["make"]
+CMD ["sudo make install"]
 
 # set env
 CMD ["export LC_ALL=C"]
