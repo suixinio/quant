@@ -2,26 +2,6 @@
 	"version": 0,
 	"dependencies": [
 		{
-			"importpath": "github.com/astaxie/beego",
-			"repository": "https://github.com/astaxie/beego",
-			"revision": "83814a76cc77279d5d979780e82f4464b33677c3",
-			"branch": "master"
-		},
-		{
-			"importpath": "github.com/astaxie/beego/session",
-			"repository": "https://github.com/astaxie/beego",
-			"revision": "83814a76cc77279d5d979780e82f4464b33677c3",
-			"branch": "master",
-			"path": "/session"
-		},
-		{
-			"importpath": "github.com/astaxie/beego/utils",
-			"repository": "https://github.com/astaxie/beego",
-			"revision": "83814a76cc77279d5d979780e82f4464b33677c3",
-			"branch": "master",
-			"path": "/utils"
-		},
-		{
 			"importpath": "github.com/bitly/go-simplejson",
 			"repository": "https://github.com/bitly/go-simplejson",
 			"revision": "da1a8928f709389522c8023062a3739f3b4af419",
@@ -55,6 +35,24 @@
 			"importpath": "github.com/go-sql-driver/mysql",
 			"repository": "https://github.com/go-sql-driver/mysql",
 			"revision": "382e13d099fcf5f5994290892ab258fbebbdc5e3",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/gorilla/context",
+			"repository": "https://github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/gorilla/securecookie",
+			"repository": "https://github.com/gorilla/securecookie",
+			"revision": "e59506cc896acb7f7bf732d4fdf5e25f7ccd8983",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/gorilla/sessions",
+			"repository": "https://github.com/gorilla/sessions",
+			"revision": "8b6b4cd75f07f7ee036eb37b8127bd40ab1efc49",
 			"branch": "master"
 		},
 		{
