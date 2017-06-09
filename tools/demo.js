@@ -61,7 +61,7 @@ function pendingAction(func, count, args) {
 
     try{
             while (!(result = dynCallback(func, args))) {
-                Sleep(Interval);
+                G.Sleep(Interval);
             
                 //always try if count < 0
                 if(count < 0){
