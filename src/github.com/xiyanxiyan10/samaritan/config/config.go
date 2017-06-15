@@ -3,14 +3,15 @@ package config
 import (
 	"log"
 	"strings"
-
+	"os"
 	"github.com/go-ini/ini"
 )
 
 var confs = make(map[string]string)
 
 func init() {
-	conf, err := ini.InsensitiveLoad("/tmp/config.ini")
+    	config_path := os.Getenv("QUANT_CONFIG")
+	conf, err := ini.InsensitiveLoad(config_path)
 	if err != nil {
 		conf, err = ini.InsensitiveLoad("config.ini")
 		if err != nil {
