@@ -12,45 +12,16 @@ rebuild from samaritan and pholcus
 - talib algorithm
 
 
-## Install
-
-### Install Env
-
-```
-    Install golang package Manager gb
-    Enter into project
-```
-
-### Install Package
-
-```
-    gb vendor restore
-```
-
-```
-    mkdir vendor/src/golang.org/x -p && cd vendor/src/golang.org/x && git clone https://github.com/golang/text && \
-    git clone https://github.com/golang/tools &&git clone https://github.com/golang/net
-    
-    cd ./web && npm install
-```
-
 ### Build
 
-
 ```
-    cd ./web && cooking build
-```
-
-```
-    gb build github.com/xiyanxiyanxiyan10    
-
+    docker build -t xiyanxiyan10/samaritan:v0.1 ./
 ```
 
 ### Run
 
 ```
-    cp ./docker/config.ini /tmp
-    bin/samaritan
+    docker-compose up -d
 ```
 
 ## Module
