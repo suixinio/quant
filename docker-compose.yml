@@ -1,0 +1,8 @@
+version: '2'
+services:
+        web:
+            image: xiyanxiyan10/samaritan:v0.1
+            ports:
+                - "9876:9876"
+            volumes:
+                - ./docker/store:/data

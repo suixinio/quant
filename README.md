@@ -28,12 +28,8 @@ rebuild from samaritan and pholcus
 ```
 
 ```
-    mkdir vendor/src/golang.org/x -p
-    cd vendor/src/golang.org/x
-    
-    git clone https://github.com/golang/text
-    git clone https://github.com/golang/tools
-    git clone https://github.com/golang/net
+    mkdir vendor/src/golang.org/x -p && cd vendor/src/golang.org/x && git clone https://github.com/golang/text && \
+    git clone https://github.com/golang/tools &&git clone https://github.com/golang/net
     
     cd ./web && npm install
 ```

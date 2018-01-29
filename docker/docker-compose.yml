@@ -1,9 +1,0 @@
-version: '2'
-services:
-        web:
-            image: lancelot/samaritan:v1.0
-            ports:
-                - "9999:22"
-                - "9876:9876"
-            volumes:
-                - ./store:/samaritan
