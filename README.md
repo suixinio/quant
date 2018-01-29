@@ -24,7 +24,7 @@ rebuild from samaritan and pholcus
 ### Install Package
 
 ```
-    go vendor restore
+    gb vendor restore
 ```
 
 ```
