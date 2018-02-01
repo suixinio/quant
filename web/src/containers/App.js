@@ -127,7 +127,7 @@ class App extends Component {
               </div>
             </div>
             <div className="ant-layout-footer">
-              <a href="www.lancelot.top">Lancelot</a> © 2016
+              <a href="www.misakamm.cn">Lancelot</a> © 2016
             </div>
           </div>
         </div>
