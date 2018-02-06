@@ -14,7 +14,7 @@
 ### Build
 
 ```
-    docker build -t xiyanxiyan10/samaritan:v0.1 ./
+    docker build -t xiyanxiyan10/samaritan ./
 ```
 
 ### Run
