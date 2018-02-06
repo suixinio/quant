@@ -2,8 +2,8 @@
 
 ## Brief
 
-1.Quants trader tool for bitcoin
-2.Rebuild from samaritan
+1. Quants trader tool for bitcoin
+2. Rebuild from samaritan
 
 ## Support
 
@@ -31,7 +31,7 @@
 4. src    background source code
 5. vendor golang gb support 
 6. web    front source code
-
+7. tools  base policy for quant
 
 ## Todo
 
