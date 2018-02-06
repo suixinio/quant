@@ -2,9 +2,8 @@
 
 ## Brief
 
-Quants trader tool
-
-rebuild from samaritan and pholcus
+1.Quants trader tool for bitcoin
+2.Rebuild from samaritan
 
 ## Support
 
@@ -21,25 +20,24 @@ rebuild from samaritan and pholcus
 ### Run
 
 ```
-    docker-compose up -d
+    cd ./deploy/compose && docker-compose up -d
 ```
 
-## Module
- 
-1. samaritan  trade framework
+## File
 
+1. deploy deploy project 
+2. docker source for docker images build  
+3. docs   hangbook
+4. src    background source code
+5. vendor golang gb support 
+6. web    front source code
 
-## Depend
-
-1. talib
-2. go 
-3. cooking
-4. nodejs
 
 ## Todo
 
 1. better system for user permission
 2. data mining with pholcus
+
 
 ## Contanct
 
