@@ -1,7 +1,7 @@
 version: '2'
 services:
         web:
-            image: quant
+            image: xiyanxiyan10/samaritan
             ports:
                 - "9876:9876"
             volumes:
