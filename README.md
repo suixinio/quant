@@ -10,17 +10,54 @@
 - bitcoin
 - talib algorithm
 
+### OS Environment
+
+- centos7
+- need 2GB of ram to run docker.
+
+### Docker Install
+- Uninstall old Docker Version 
+    ```bash
+    $ sudo yum remove docker \
+      docker-client \
+      docker-client-latest \
+      docker-common \
+      docker-latest \
+      docker-latest-logrotate \
+      docker-logrotate \
+      docker-selinux \
+      docker-engine-selinux \
+      docker-engine
+    ```
+- Repo install and upgrade
+    ```bash 
+    sudo yum install -y yum-utils \
+    device-mapper-persistent-data \
+    lvm2
+    ```
+    ```bash
+    sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+    ```
+    ```bash
+    $ sudo yum install docker-ce
+    ```
+    ```bash
+    $ sudo systemctl start docker
+    ```
+    [install docker-compose](https://github.com/docker/compose/releases)
 
 ### Build
 
-```
-    docker build -t xiyanxiyan10/samaritan ./
+```bash
+docker build -t xiyanxiyan10/samaritan ./
 ```
 
 ### Run
 
-```
-    cd ./deploy/compose && docker-compose up -d
+```bash
+cd ./deploy/compose && docker-compose up -d
 ```
 
 ## File
@@ -35,13 +72,9 @@
 
 ## Todo
 
-1. better system for user permission
-2. data mining with pholcus
+1. fix exchange api
 
+## Fork
 
-## Contanct
-
-1. name: lancelot
-2. email:xiyanxiyan10@hotmail.com
-3. weixin: xiyanxiyan10
-
+- [samaritan - miaolz123](https://github.com/miaolz123/samaritan)
+- [quant - xiyanxiyan10](https://github.com/xiyanxiyan10/quant)
